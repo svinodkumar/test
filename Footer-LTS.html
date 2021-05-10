@@ -1,247 +1,1441 @@
 <html>
-    <head>
-<title>
-footer-demo
-</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <title>
+        footer-demo
+    </title>
+ 
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-
-    <body>
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
-<!-- Modal -->
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                
-                <button type="button"
-                class="btn modal-close btn--close-black" aria-label="Close Modal"><svg width="8" height="8"
-                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" aria-label="Close modal icon">
-                    <path
-                        d="M4.998 4L7.79 1.207a.706.706 0 10-.998-1L4 3 1.207.207a.707.707 0 00-1 1L3 4 .207 6.793a.707.707 0 001 1L4 5l2.793 2.793a.707.707 0 001-1L4.998 4z"
-                        fill="currentColor"></path>
-                </svg></button>
-                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-            </div>
-            <div class="modal-body">
-                <div role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
-
-                        </li>
-                        <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
-
-                        </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
-                        <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary save">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="app">
-    <div class="flex flex-col min-h-screen">
-        <footer class="footer mt-4 px-4">
-            <div class="footer-content">
-                <div class="md:hidden mb-2"><button type="button"
-                        class="btn footer-link tour-call-agent-btn btn--text btn--danger"
-                        id="call-agent-footer-btn"><span class="footer-arrow"><svg width="20" height="21"
-                                fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
-                                aria-label="Arrow right icon" class="text-red">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span><svg width="16" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true" role="img" aria-label="Headset icon" class="inline-block mr-2">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M16 15.19v5.31h-.873v-5.31c0-1.38-1.127-2.472-2.509-2.472H3.382a2.452 2.452 0 00-2.473 2.473V20.5H0v-5.31a3.399 3.399 0 013.382-3.38h9.236A3.399 3.399 0 0116 15.19zM3.964 8.719h-2.51V4.864h.8l.219-.619c.29-.69.69-1.345 1.2-1.89C4.8 1.155 6.327.5 8 .5s3.2.655 4.29 1.855c.51.545.91 1.2 1.2 1.89v.037l.22.582h.835v3.854h-2.509c-.218.437-.509.873-.872 1.237A4.456 4.456 0 018 11.264c-1.2 0-2.327-.473-3.164-1.31a4.778 4.778 0 01-.872-1.236zM11.6 6.791c0-1.964-1.636-3.564-3.6-3.564a3.57 3.57 0 00-3.564 3.564c0 1.964 1.6 3.6 3.564 3.6 1.273 0 2.4-.691 3.018-1.673H9.673c-.182.51-.655.837-1.2.837-.691 0-1.273-.582-1.273-1.273 0-.727.582-1.31 1.273-1.31.545 0 1.018.364 1.2.837h1.745c.11-.327.182-.654.182-1.018zM8.473 7.7a.598.598 0 00-.582.582c0 .327.29.582.582.582a.574.574 0 00.582-.582.574.574 0 00-.582-.582zm4-1.927v2.036h1.2V5.773h-1.2zm-9.237-.91h.728c.218-.472.509-.872.872-1.236A4.456 4.456 0 018 2.318c1.2 0 2.327.473 3.164 1.31.363.363.654.763.872 1.236h.728l-.11-.291c-.218-.618-.581-1.164-1.018-1.637C10.691 1.918 9.418 1.373 8 1.373c-1.418 0-2.727.545-3.673 1.563A5.398 5.398 0 003.31 4.573l-.073.29zm.291.91h-1.2v2.036h1.2V5.773z"
-                                fill="currentColor"></path>
-                        </svg> Call Licensed Insurance Agent</button><button type="button"
-                        class="btn footer-link tour-open-on-desktop-btn btn--text btn--danger"
-                        id="open-on-desktop-footer-btn"><span class="footer-arrow"><svg width="20" height="21"
-                                fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
-                                aria-label="Arrow right icon" class="text-red">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span><svg width="14" height="18" viewBox="0 0 61 56"
-                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
-                            aria-label="Monitor icon" class="fill-current inline-block mr-3">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M45.1 55.7H16.6v-1.3c0-2.8 2.3-5.1 5.1-5.1h2.2v-3.5H.8v-40C.8 3 3 .7 5.9.7h49.9C58.7.7 61 3 61 5.8v40H37.8v3.5H40c2.8 0 5.1 2.3 5.1 5.1v1.3zm-25.8-2.5h23.1c-.4-.9-1.4-1.5-2.4-1.5H21.7c-1 0-2 .6-2.4 1.5zm7-3.9h9.1v-3.5h-9.1v3.5zm-23.1-6h55.3V5.8c0-1.5-1.2-2.7-2.7-2.7H5.9c-1.5 0-2.7 1.2-2.7 2.7v37.5zm52.9-5.5H5.6V5.5h50.5v32.3zM8 35.3h45.7V8H8v27.3zm1.3 5.1c0-.5.5-1 1-1 .6 0 1 .5 1 1 0 .6-.4 1.1-1 1.1-.5 0-1-.5-1-1.1zm-2.6 1.1c.5 0 1-.5 1-1.1 0-.5-.5-1-1-1-.6 0-1.1.5-1.1 1 0 .6.5 1.1 1.1 1.1z">
-                            </path>
-                        </svg>Open this Website on Desktop</button></div>
-                <div><button type="button" class="btn footer-link btn--text btn--default"><span
-                            class="footer-arrow"><svg width="20" height="21" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
-                                aria-label="Arrow right icon">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span>CVS Pharmacy Disclaimers</button><button type="button"
-                        class="btn footer-link btn--text btn--default"><span class="footer-arrow"><svg width="20"
-                                height="21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                role="img" aria-label="Arrow right icon">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span>Non-Discrimination Notice</button><a class="footer-link"
-                        href="https://www.cvs.com/help/terms_of_use.jsp" rel="noopener noreferrer"
-                        data-event-meta="terms_of_use_link" target="_blank"><span class="footer-arrow"><svg
-                                width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" role="img" aria-label="Arrow right icon">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span>Terms of Service</a><a class="footer-link"
-                        href="https://www.cvs.com/help/privacy_policy.jsp" rel="noopener noreferrer"
-                        data-event-meta="privacy_policy_link" target="_blank"><span class="footer-arrow"><svg
-                                width="20" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true" role="img" aria-label="Arrow right icon">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span>Privacy Policy</a><button type="button"
-                        class="btn footer-link btn--text btn--default"><span class="footer-arrow"><svg width="20"
-                                height="21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                role="img" aria-label="Arrow right icon">
-                                <path
-                                    d="M7.758 6.092a.83.83 0 000 1.175l3.234 3.233-3.234 3.233a.83.83 0 101.175 1.175l3.825-3.825a.83.83 0 000-1.175L8.933 6.083a.838.838 0 00-1.175.009z"
-                                    fill="currentColor"></path>
-                            </svg></span>Contact Us</button></div>
-            </div>
-        </footer>
-    </div>
-</div>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
+       
+<style>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+    .flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    *, :after, :before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 0 solid #e9e9e9;
+    }
+    
+    .text-grey-dark {
+        --text-opacity: 1;
+        color: #8c8c8c;
+        color: rgba(140,140,140,var(--text-opacity));
+    }
+    .text-red {
+        --text-opacity: 1;
+        color: #c00;
+        color: rgba(204,0,0,var(--text-opacity));
+        font-size: 40px;
+    }
+    .p-6 {
+        padding: 1.5rem;
+    }
+    .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .text-2xs {
+        font-size: .688rem;
+    }
+    .justify-between {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+    .mb-4 {
+        margin-bottom: 1rem;
+    }
 
-                </button>
-                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-            </div>
-            <div class="modal-body">
-                <div role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="active"><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                        <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-                        <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                          <div id="menu1" class="tab-pane fade in active">
-                            <ul class="text-md list-disc pl-8"  style=" list-style-type: disc;overflow-y: scroll;">
-                                <li class="mb-5"><strong>About this website:</strong> CVS Pharmacy partners with third parties to
-                                    provide this online search tool as a courtesy to help CVS Pharmacy customers identify Medicare
-                                    medication coverage options. CVS Pharmacy accepts most Medicare Part D plans and does not
-                                    endorse any particular plan. Your estimated costs and savings may vary depending on your
-                                    premium, deductible, individual plan’s cost-sharing obligations for your prescription
-                                    medications, any Medicare Part D penalty that may apply and whether you qualify for Extra Help
-                                    from Medicare with paying your prescription medication costs.</li>
-                                <li class="mb-5"><strong>How the online tool works:</strong> The online tool creates a list of
-                                    Medicare Part D plans and Medicare Advantage plans with prescription medication coverage based
-                                    on the following data: CVS Pharmacy retail patient prescription information; carrier plan
-                                    information obtained from multiple sources; medicare.gov; and CMS. After entering your date of
-                                    birth and ZIP code, the online tool will recommend plans based on the calculated out-of-pocket
-                                    cost for medications filled at CVS Pharmacy and/or manually entered in the online tool. The tool
-                                    will use information from up to 25 of your medications filled at CVS Pharmacy within the past 12
-                                    months. If the list of medications used in calculating your costs is inaccurate or incomplete,
-                                    you can manually add, remove, or change information about your medications used in the online
-                                    tool by clicking on “Medications”. This plan finder tool will by default display only those
-                                    plans in which CVS Pharmacy is a preferred in-network pharmacy. You can select “Show All Plans”
-                                    from the available plan sorting filters to view plans where CVS Pharmacy is not a preferred
-                                    pharmacy.</li>
-                                <li class="mb-5"><strong>How the lifestyle assessment works:</strong> You have the option to use the
-                                    “Lifestyle Assessment” to answer questions about your health care coverage preferences. Your
-                                    selections will be used to apply filters and sorting mechanisms to the list of recommended
-                                    plans. You can edit your responses to the Lifestyle Assessment or manually apply filters and
-                                    sorting preferences at any time. You can select “Show All Plans” to view all available plans in
-                                    your coverage area.</li>
-                                <li class="mb-5"><strong>How you can enroll in a health care plan:</strong> If you choose to enroll
-                                    in a plan, you will be redirected to eHealth, a third party, to complete enrollment. CVS
-                                    Pharmacy offers this online tool only as a courtesy for its customers, does not endorse any
-                                    particular plan, and does not receive compensation of any kind from plan sponsors or our third
-                                    party partners. Our third party partners may, however, receive compensation based on your
-                                    enrollment in a particular plan.</li>
-                                <li class="mb-5"><strong>About your privacy:</strong> This website uses a trusted third party source
-                                    to provide information regarding some of your Medicare medication coverage options. Any
-                                    information you provide through the online tool is subject to our Privacy Policy. Once you leave
-                                    the online tool to go to a third party’s website, such as eHealth, the information you provide
-                                    to that third party will be subject to the third party’s privacy policy, not ours. We recommend
-                                    you review any third party’s privacy policy before sharing your information with them.</li>
-                                <li class="mb-5">This web page is under development. If you experience difficulty using this web
-                                    page or have questions regarding its content, please contact 1-888-607-4CVS (1-888-607-4287).
-                                </li>
-                            </ul>
-                          </div>
-                          <div id="menu2" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                          </div>
-                          <div id="menu3" class="tab-pane fade">
-                            <h3>Menu 3</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                          </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary save">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<script>
-    function addImage(pk) {
-    alert("addImage: " + pk);
+    .py-7 {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+}
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.text-lg {
+    font-size: 1.125rem;
+}
+.font-bold {
+    font-weight: 700;
+}
+.border-b {
+    border-bottom-width: 1px;
+}
+.ctrl {
+    font-size: 1.125rem;
+    --text-opacity: 1;
+    color: #000;
+    color: rgba(0,0,0,var(--text-opacity));
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: .5rem 0;
+    border-width: 0 0 1px;
+    --border-opacity: 1;
+    border-color: #8c8c8c;
+    border-color: rgba(140,140,140,var(--border-opacity));
+    line-height: 1.5;
+}
+.ctrl:not(textarea) {
+    height: -webkit-calc(2.5rem + 1px);
+    height: -moz-calc(2.5rem + 1px);
+    height: calc(2.5rem + 1px);
 }
 
-$('#myModal .save').click(function (e) {
-    e.preventDefault();
-    addImage(5);
-    $('#myModal').modal('hide');
-    //$(this).tab('show')
-    return false;
-})
-</script>
-    </body>
-</html>
 
+
+.tracking-widest {
+    letter-spacing: .1em;
+}
+<style>
+.uppercase {
+    text-transform: uppercase;
+}
+<style>
+.text-grey-darker {
+    --text-opacity: 1;
+    color: #505050;
+    color: rgba(80,80,80,var(--text-opacity));
+}
+<style>
+.text-xs {
+    font-size: .625rem;
+}
+<style>
+.font-bold {
+    font-weight: 700;
+}
+<style>
+.block {
+    display: block;
+}
+
+<style>
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0 solid #e9e9e9;
+}
+user agent stylesheet
+label {
+    cursor: default;
+}
+
+
+    </style>
+</head>
+
+
+<body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo
+        modal</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="btn modal-close btn--close-black" aria-label="Close Modal"><svg
+                            width="8" height="8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                            aria-label="Close modal icon">
+                            <path
+                                d="M4.998 4L7.79 1.207a.706.706 0 10-.998-1L4 3 1.207.207a.707.707 0 00-1 1L3 4 .207 6.793a.707.707 0 001 1L4 5l2.793 2.793a.707.707 0 001-1L4.998 4z"
+                                fill="currentColor"></path>
+                        </svg></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab"
+                                    role="tab" data-toggle="tab">Upload</a>
+
+                            </li>
+                            <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab"
+                                    data-toggle="tab">Browse</a>
+
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
+                            <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="app">
+        <div class="flex flex-col min-h-screen">
+            <footer class="footer mt-4 px-4">
+                <ul>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal">CVS Pharmacy Disclaimer</a>
+                    </li>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal2">Non-Discrimination
+                            Notice</a></li>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal">Terms of service</a></li>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal">Privacy Policy</a></li>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal">About Us</a></li>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal">FAQ</a></li>
+                    <li><a id="" class="" href="" data-toggle="modal" data-target="#myModal3">Conttact Us</a></li>
+
+                </ul>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!-- CVS Pharmacy Disclaimer Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 768;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">CVS Pharmacy Disclaimers</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a data-toggle="tab" href="#menu1">Medicare Retail</a></li>
+                            <li><a data-toggle="tab" href="#menu2">CVS</a></li>
+                            <li><a data-toggle="tab" href="#menu3">Others</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div id="menu1" class="tab-pane fade in active">
+                                <ul class="text-md list-disc pl-8" style=" max-height: calc(100vh - 200px);overflow-y: auto; padding-top: 15;margin: 0 0 13px 0;">
+                                    <li class="mb-5"><strong>About this website:</strong> CVS Pharmacy partners with
+                                        third parties to
+                                        provide this online search tool as a courtesy to help CVS Pharmacy customers
+                                        identify Medicare
+                                        medication coverage options. CVS Pharmacy accepts most Medicare Part D plans and
+                                        does not
+                                        endorse any particular plan. Your estimated costs and savings may vary depending
+                                        on your
+                                        premium, deductible, individual plan’s cost-sharing obligations for your
+                                        prescription
+                                        medications, any Medicare Part D penalty that may apply and whether you qualify
+                                        for Extra Help
+                                        from Medicare with paying your prescription medication costs.</li>
+                                    <li class="mb-5"><strong>How the online tool works:</strong> The online tool creates
+                                        a list of
+                                        Medicare Part D plans and Medicare Advantage plans with prescription medication
+                                        coverage based
+                                        on the following data: CVS Pharmacy retail patient prescription information;
+                                        carrier plan
+                                        information obtained from multiple sources; medicare.gov; and CMS. After
+                                        entering your date of
+                                        birth and ZIP code, the online tool will recommend plans based on the calculated
+                                        out-of-pocket
+                                        cost for medications filled at CVS Pharmacy and/or manually entered in the
+                                        online tool. The tool
+                                        will use information from up to 25 of your medications filled at CVS Pharmacy
+                                        within the past 12
+                                        months. If the list of medications used in calculating your costs is inaccurate
+                                        or incomplete,
+                                        you can manually add, remove, or change information about your medications used
+                                        in the online
+                                        tool by clicking on “Medications”. This plan finder tool will by default display
+                                        only those
+                                        plans in which CVS Pharmacy is a preferred in-network pharmacy. You can select
+                                        “Show All Plans”
+                                        from the available plan sorting filters to view plans where CVS Pharmacy is not
+                                        a preferred
+                                        pharmacy.</li>
+                                    <li class="mb-5"><strong>How the lifestyle assessment works:</strong> You have the
+                                        option to use the
+                                        “Lifestyle Assessment” to answer questions about your health care coverage
+                                        preferences. Your
+                                        selections will be used to apply filters and sorting mechanisms to the list of
+                                        recommended
+                                        plans. You can edit your responses to the Lifestyle Assessment or manually apply
+                                        filters and
+                                        sorting preferences at any time. You can select “Show All Plans” to view all
+                                        available plans in
+                                        your coverage area.</li>
+                                    <li class="mb-5"><strong>How you can enroll in a health care plan:</strong> If you
+                                        choose to enroll
+                                        in a plan, you will be redirected to eHealth, a third party, to complete
+                                        enrollment. CVS
+                                        Pharmacy offers this online tool only as a courtesy for its customers, does not
+                                        endorse any
+                                        particular plan, and does not receive compensation of any kind from plan
+                                        sponsors or our third
+                                        party partners. Our third party partners may, however, receive compensation
+                                        based on your
+                                        enrollment in a particular plan.</li>
+                                    <li class="mb-5"><strong>About your privacy:</strong> This website uses a trusted
+                                        third party source
+                                        to provide information regarding some of your Medicare medication coverage
+                                        options. Any
+                                        information you provide through the online tool is subject to our Privacy
+                                        Policy. Once you leave
+                                        the online tool to go to a third party’s website, such as eHealth, the
+                                        information you provide
+                                        to that third party will be subject to the third party’s privacy policy, not
+                                        ours. We recommend
+                                        you review any third party’s privacy policy before sharing your information with
+                                        them.</li>
+                                    <li class="mb-5">This web page is under development. If you experience difficulty
+                                        using this web
+                                        page or have questions regarding its content, please contact 1-888-607-4CVS
+                                        (1-888-607-4287).
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="menu2" class="tab-pane fade">
+                                <h3>Menu 2</h3>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem aperiam.</p>
+                            </div>
+                            <div id="menu3" class="tab-pane fade">
+                                <h3>Menu 3</h3>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem aperiam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Non-Discrimination -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog " style="width: 768;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Non-Discrimination Notice</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content" style=" max-height: calc(100vh - 200px);overflow-y: auto; padding-top: 15;margin: 0 0 13px 0;">
+                        <p>The plans listed on this site do not discriminate on the basis of race, color, national
+                            origin, age,
+                            disability, or sex.</p>
+                        <p class="mb-4">To learn more about a plan's nondiscrimination policy, please select the
+                            applicable
+                            insurance carrier below.</p>
+                        <div class="divide-y"><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/aetna-nds.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Aetna Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/alignment-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Alignment Health Plan Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/allwell-nds.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Allwell Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/anthem-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Amerigroup Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/anthemflorida-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Anthem Florida Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/anthem-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Anthem Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/ascensioncomplete-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Ascension Complete Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/aspire-nds.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Aspire Health Plan Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsaz-ma-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of Arizona Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsil-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of Illinois Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsmn-nds-2019.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of Minnesota Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsmt-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of Montana Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsnm-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of New Mexico Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsok-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of Oklahoma Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbstx-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross and Blue Shield of Texas Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bsbsmi-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross Blue Shield of Michigan Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bcbsne-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Cross Blue Shield of Nebraska Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/bsca-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Blue Shield of California Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/brighthealth-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Bright Health Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/careplus-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> CarePlus Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/cdphp-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> CDPHP Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/cignahealthspringaz-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Cigna-HealthSpring Arizona Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/cignahealthspring-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Cigna-HealthSpring Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/clover-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Clover Health Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/aetna-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Coventry Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/dean-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Dean Health Plan, Inc. Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/emblem-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> EmblemHealth Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/anthem-nds-2019.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Empire Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/envisionrx-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> EnvisionRx Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/expressscripts-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Express Scripts Medicare Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/fallon-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Fallon Community Health Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/geisinger-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Geisinger Gold Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/harvardpilgrim-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Harvard Pilgrim Health Care Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/hamp-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Health Alliance Medical Plans Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/healthnet-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Health Net Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/highmark-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Highmark Blue Cross Blue Shield Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/horizon-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Horizon Blue Cross Blue Shield of New Jersey Nondiscrimination
+                                    Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/humana-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Humana Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaisernw-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Foundation Health Plan of the NW Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaiserwa-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Foundation Health Plan of Washington Nondiscrimination
+                                    Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaiserca-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Permanente of CA Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaiserco-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Permanente of CO Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaiserga-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Permanente of GA Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaiserhi-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Permanente of HI Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/kaisermas-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Kaiser Permanente of Mid-Atlantic States Nondiscrimination Notice</span><svg
+                                    width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true" role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/medica-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Medica Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/mmmflorida-nds-2019.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> MMM of Florida Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/molina-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Molina Health Care Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/oscar-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Oscar Nondiscrimination Notice</span><svg width="16" height="16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/priorityhealth-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Priority Health Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/scan-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> SCAN Health Plan Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/selecthealth-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> SelectHealth Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/silverscript-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> SilverScript Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/stanford-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Stanford Health Care Advantage Nondiscrimination Notice</span><svg width="16"
+                                    height="16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="img" aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/uhc-nds.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> UnitedHealthcare Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/upmc-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> UPMC Health Plan Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a><a class="flex justify-between py-4 text-red text-2xs cursor-pointer"
+                                href="https://cvs-docs.s3.us-east-2.amazonaws.com/docs/wellcare-nds-2020.pdf"
+                                rel="noopener noreferrer" target="_blank"><span class="flex"><svg width="14" height="16"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                        aria-label="PDF File icon" class="mr-2">
+                                        <path
+                                            d="M4.052 8.175c0-.38-.264-.607-.73-.607-.19 0-.318.018-.385.036v1.221c.08.018.178.024.312.024.497 0 .803-.251.803-.674zM6.935 7.58a1.94 1.94 0 00-.423.037v2.704c.08.018.208.018.325.018.846.006 1.398-.46 1.398-1.447.006-.858-.497-1.312-1.3-1.312z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M12.459 5.991h-.339V4.356a.23.23 0 00-.003-.031.273.273 0 00-.066-.18L9.33 1.037l-.002-.002a.283.283 0 00-.127-.079L9.184.951a.27.27 0 00-.063-.008H2.434a.554.554 0 00-.554.553v4.495h-.339a.79.79 0 00-.791.791v4.114c0 .437.355.791.791.791h.339v2.817c0 .305.248.553.554.553h9.132a.554.554 0 00.554-.553v-2.816h.339a.791.791 0 00.791-.792V6.782a.791.791 0 00-.791-.79zM2.434 1.496h6.411v2.832c0 .153.124.277.277.277h2.445v1.386H2.434V1.496zm6.795 7.365c0 .791-.288 1.337-.688 1.675-.435.361-1.097.533-1.907.533-.484 0-.827-.031-1.06-.061v-4.06a8.373 8.373 0 011.263-.085c.785 0 1.293.141 1.692.441.43.319.7.828.7 1.557zM2.01 11.026V6.949a7.663 7.663 0 011.262-.085c.577 0 .988.11 1.264.331.263.208.44.552.44.956 0 .405-.134.748-.38.981-.319.301-.79.436-1.343.436-.122 0-.232-.006-.318-.019v1.479h-.925zm9.555 3.328H2.434v-2.666h9.133v2.666zm.802-6.694H10.78v.944h1.484v.761H10.78v1.662h-.938V6.893h2.526v.767z"
+                                            fill="currentColor"></path>
+                                    </svg> Wellcare Nondiscrimination Notice</span><svg width="16" height="16"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
+                                    aria-label="Download icon" class="text-grey-dark">
+                                    <path
+                                        d="M13.777 13.778H2.222a.445.445 0 100 .889h11.555a.445.445 0 000-.89zM8 13.102l4.716-4.715a.444.444 0 00-.627-.627L8.445 11.4V2.222a.444.444 0 00-.89 0V11.4l-3.64-3.64a.445.445 0 10-.626.627L8 13.102z"
+                                        fill="currentColor"></path>
+                                </svg></a></div>
+                        <p class="text-2xs text-grey-darker my-4">This website and its contents are for informational
+                            purposes
+                            only. Nothing on the website should ever be used as a substitute for professional medical
+                            advice.
+                            You should always consult with your medical provider regarding diagnosis or treatment for a
+                            health
+                            condition, including decisions about the correct medication for your condition, as well as
+                            prior to
+                            undertaking any specific exercise or dietary routine.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Non-Discrimination -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
+
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div class="h-0" role="alert"></div>
+                <form novalidate="">
+                    <div class="flex space-x-6 mb-10">
+                        <div class="flex-1">
+                            <div title="[object Object]"><label
+                                    class="block text-xs text-grey-darker font-bold uppercase tracking-widest"
+                                    for="firstName">First Name</label>
+                                <div><input id="firstName" type="text" class="ctrl" name="firstName" required=""
+                                        autocomplete="given-name" value="">
+                                    <p class="h-0" role="alert"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div title="[object Object]"><label
+                                    class="block text-xs text-grey-darker font-bold uppercase tracking-widest"
+                                    for="lastName">Last Name</label>
+                                <div><input id="lastName" type="text" class="ctrl" name="lastName" required=""
+                                        autocomplete="family-name" value="">
+                                    <p class="h-0" role="alert"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div title="[object Object]"><label
+                                class="block text-xs text-grey-darker font-bold uppercase tracking-widest"
+                                for="emailAddress">Email Address</label>
+                            <div><input id="emailAddress" type="email" class="ctrl" name="emailAddress" required=""
+                                    autocomplete="email" value="">
+                                <p class="h-0" role="alert"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-10">
+                        <div title="[object Object]"><label
+                                class="block text-xs text-grey-darker font-bold uppercase tracking-widest"
+                                for="message">Your Message</label>
+                            <div><textarea rows="4" class="ctrl" name="message" id="message"></textarea>
+                                <p class="h-0" role="alert"></p>
+                            </div>
+                        </div>
+                    </div><button type="submit" class="btn w-full md:w-auto btn--danger">Send Message</button>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function addImage(pk) {
+            alert("addImage: " + pk);
+        }
+
+        $('#myModal .save').click(function (e) {
+            e.preventDefault();
+            addImage(5);
+            $('#myModal').modal('hide');
+            //$(this).tab('show')
+            return false;
+        })
+    </script>
+</body>
+
+</html>
