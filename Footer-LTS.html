@@ -117,30 +117,30 @@
 .tracking-widest {
     letter-spacing: .1em;
 }
-<style>
+
 .uppercase {
     text-transform: uppercase;
 }
-<style>
+
 .text-grey-darker {
     --text-opacity: 1;
     color: #505050;
     color: rgba(80,80,80,var(--text-opacity));
 }
-<style>
+
 .text-xs {
-    font-size: .625rem;
+    font-size: 1rem;
 }
-<style>
+
 .font-bold {
     font-weight: 700;
 }
-<style>
+
 .block {
     display: block;
 }
 
-<style>
+
 *, :after, :before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -151,8 +151,14 @@ user agent stylesheet
 label {
     cursor: default;
 }
-
-
+input:focus{
+    outline: none !important;
+    border-bottom-color:brown;
+}
+textarea:focus{
+    outline: none !important;
+    border-bottom-color:brown;
+}
     </style>
 </head>
 
@@ -1376,7 +1382,7 @@ label {
                         <div class="h-0" role="alert"></div>
                 <form novalidate="">
                     <div class="flex space-x-6 mb-10">
-                        <div class="flex-1">
+                        <div class="flex-1" style="margin-right: 30px ;">
                             <div title="[object Object]"><label
                                     class="block text-xs text-grey-darker font-bold uppercase tracking-widest"
                                     for="firstName">First Name</label>
@@ -1415,7 +1421,7 @@ label {
                                 <p class="h-0" role="alert"></p>
                             </div>
                         </div>
-                    </div><button type="submit" class="btn w-full md:w-auto btn--danger">Send Message</button>
+                    </div><button type="submit" class="btn w-full md:w-auto btn--danger" style="background-color: #c00;color: white;">Send Message</button>
                 </form>
                     </div>
                 </div>
