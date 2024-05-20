@@ -1,3 +1,125 @@
+Include (HS.FHIRServer, HS.FHIR.Errors)
+ 
+Class FHIRSERVERPKG.FHIR.Validator Extends Ens.BusinessProcess
+{
+ 
+/// Description
+Method OnRequest(pRequest As Ens.StreamContainer, pResponse As Ens.StreamContainer) As %Status
+{
+    //Validate the patient resource
+    set schema = ##class(HS.FHIRServer.Schema).LoadSchema("R4")
+    set resourceValidator = ##class(HS.FHIRServer.Util.ResourceValidator).%New(schema)
+    set tResponse = ##class(FHIRSERVERPKG.FHIR.ValidatorResponse).%New()
+    Set sc = $$$OK
+    set tBundle = ##class(%DynamicObject).%FromJSON(pRequest.Stream)
+    set patmusthave = $LB("identifier","birthDate")  // @vinod look to get this from config instead of hardcode and build this list
+    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+    set CDRFHIRMSErr = "<CDRFHIRError>MustSupport"
+    //do resourceValidator.ValidateResource(tBundle,1)
+    $$$LOGINFO("Bundle Done")
+    set tEntryIterator = tBundle.entry.%GetIterator()
+    while tEntryIterator.%GetNext(.tKey,.tval,.tType){
+        if tval.resource.resourceType = "Patient" {
+            for i=1:1:$LISTLENGTH(patmusthave) {
+                If tval.resource.%IsDefined($LISTGET(patmusthave,i)) = 0 {
+                    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+                    set ValError.ResourceType = tval.resource.resourceType
+                    set ValError.ResourceID = tval.resource.id
+                    //@vinod - capture ValError.InsertDate
+                    set ValError.ErrorCode = CDRFHIRMSErr
+                    set ValError.ErrorDescription = CDRFHIRMSErr_":"_tval.resource.resourceType_"."_$LISTGET(patmusthave,i)_" is not defined"
+                    set ValError.SessionId = ..%SessionId
+                    set tsc= ValError.%Save()
+                   
+                }
+            }
+            Try {
+                $$$ThrowOnError(resourceValidator.ValidateObject(tval.resource,tval.resource.resourceType,tval.resource.resourceType,$$$OK,1))
+            } Catch ex {
+                set tsc = ex.AsStatus()
+                do $SYSTEM.Status.DecomposeStatus(tsc,.errorlist)
+               
+                for i=1:1:errorlist {
+                    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+                    set ValError.ResourceType = tval.resource.resourceType
+                    set ValError.ResourceID = tval.resource.id
+                    set ValError.ErrorCode = errorlist(i,"code")
+                    set ValError.ErrorDescription = errorlist(i)
+                    set ValError.SessionId = ..%SessionId
+                    set tsc= ValError.%Save()
+                   
+                }
+                set sc=$$$OK
+            }
+           
+        }
+           
+    }
+    //@vinod - write a logic to read from the table based on the sessionid and put in a outputfile.
+    Return sc
+}
+ 
+Storage Default
+{
+<Type>%Storage.Persistent</Type>
+}
+ 
+}
+
+
+
+
+Class FHIRSERVERPKG.FHIR.ErrorResponse Extends %Persistent
+{
+ 
+/// Description
+Property SessionId As %String;
+ 
+Property InsertDate As %String;
+ 
+Property ResourceType As %String;
+ 
+Property ResourceID As %String;
+ 
+Property ErrorCode As %String;
+ 
+Property ErrorDescription As %String(MAXLEN = 250);
+ 
+Storage Default
+{
+<Data name="ErrorResponseDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>ResourceType</Value>
+</Value>
+<Value name="3">
+<Value>ResourceID</Value>
+</Value>
+<Value name="4">
+<Value>ErrorCode</Value>
+</Value>
+<Value name="5">
+<Value>ErrorDescription</Value>
+</Value>
+<Value name="6">
+<Value>SessionId</Value>
+</Value>
+<Value name="7">
+<Value>InsertDate</Value>
+</Value>
+</Data>
+<DataLocation>^FHIRSERVERPK152C.ErrorResponseD</DataLocation>
+<DefaultData>ErrorResponseDefaultData</DefaultData>
+<IdLocation>^FHIRSERVERPK152C.ErrorResponseD</IdLocation>
+<IndexLocation>^FHIRSERVERPK152C.ErrorResponseI</IndexLocation>
+<StreamLocation>^FHIRSERVERPK152C.ErrorResponseS</StreamLocation>
+<Type>%Storage.Persistent</Type>
+}
+ 
+}
+
 <html>
 
 <head>
