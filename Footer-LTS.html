@@ -6,6 +6,178 @@ Class FHIRSERVERPKG.FHIR.Validator Extends Ens.BusinessProcess
 /// Description
 Method OnRequest(pRequest As Ens.StreamContainer, pResponse As Ens.StreamContainer) As %Status
 {
+    Set sc = $$$OK
+   
+    //Validate the patient resource set R4 schema
+    set schema = ##class(HS.FHIRServer.Schema).LoadSchema("R4")
+    set resourceValidator = ##class(HS.FHIRServer.Util.ResourceValidator).%New(schema)
+   
+    //read the validation configurations
+    Set tValAttr = "" , tValExtn = ""
+    set tSC = ..GetValidationConfig(.tValAttr, .tValExtn)
+ 
+    set CDRFHIRMSErr = "<CDRFHIRError>MustSupport"
+   
+    //read the source bundle
+    set tBundle = ##class(%DynamicObject).%FromJSON(pRequest.Stream)
+ 
+    //set patmusthave = $LB("identifier","birthDate")  // @vinod look to get this from config instead of hardcode and build this list
+    //do resourceValidator.ValidateResource(tBundle,1)
+    $$$LOGINFO("Bundle Done")
+    set tEntryIterator = tBundle.entry.%GetIterator()
+    while tEntryIterator.%GetNext(.tKey,.tval,.tType){
+        set MSAttribute = $LISTFROMSTRING($GET(tValAttr(tval.resource.resourceType)),"^")
+        set MSExtension = $LISTFROMSTRING($GET(tValExtn(tval.resource.resourceType)),"^")
+        if tval.resource.resourceType = "Patient" {
+            set tSC = ..ValidateMustSupport(tval,MSAttribute)
+            //set tSC = ..ValidateMustSupportExtn(tval,MSExtension)
+            Try {
+                $$$ThrowOnError(resourceValidator.ValidateObject(tval.resource,tval.resource.resourceType,tval.resource.resourceType,$$$OK,1))
+            } Catch ex {
+                set tsc = ex.AsStatus()
+                do $SYSTEM.Status.DecomposeStatus(tsc,.errorlist)
+               
+                for i=1:1:errorlist {
+                    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+                    set ValError.ResourceType = tval.resource.resourceType
+                    set ValError.ResourceID = tval.resource.id
+                    set ValError.ErrorCode = errorlist(i,"code")
+                    set ValError.ErrorDescription = errorlist(i)
+                    set ValError.SessionId = ..%SessionId
+                    set tsc= ValError.%Save()
+                   
+                }
+                set sc=$$$OK
+            }
+           
+        }
+           
+    }
+    //@vinod - write a logic to read from the table based on the sessionid and put in a outputfile.
+    Return sc
+}
+ 
+Method ValidateMustSupport(pval, pMustSupport) As %Status
+{
+    Set tSC=$$$OK
+    Try {
+        set CDRFHIRMSErr = "<CDRFHIRError>MustSupport"
+        for i=1:1:$LISTLENGTH(pMustSupport) {
+                If pval.resource.%IsDefined($LISTGET(pMustSupport,i)) = 0 {
+                    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+                    set ValError.ResourceType = pval.resource.resourceType
+                    set ValError.ResourceID = pval.resource.id
+                    //@vinod - capture ValError.InsertDate
+                    set ValError.ErrorCode = CDRFHIRMSErr
+                    set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resource.resourceType_"."_$LISTGET(pMustSupport,i)_" is not defined"
+                    set ValError.SessionId = ..%SessionId
+                    set tsc= ValError.%Save()
+                   
+                }
+            }
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+Method ValidateMustSupportExtn(pval, pMustSupport) As %Status
+{
+    Set tSC=$$$OK
+    Try {
+        set CDRFHIRMSErr = "<CDRFHIRError>MustSupportExtension"
+        for i=1:1:$LISTLENGTH(pMustSupport) {
+            set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+            set ValError.ResourceType = pval.resource.resourceType
+            set ValError.ResourceID = pval.resource.id
+            //@vinod - capture ValError.InsertDate
+            set ValError.ErrorCode = CDRFHIRMSErr
+            set ValError.SessionId = ..%SessionId
+   
+            If pval.resource.%IsDefined("extension") = 0 {
+               
+                set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resource.resourceType_".extension "_" is not defined"
+               
+            }
+            Else{
+                set tExtnIter = pval.resource.extension.%GetIterator()
+                while tExtnIter.%GetNext(.tExtnKey, .tExtnVal, .tExtnType) {
+                    if tExtnVal.%IsDefined("url") = 1 {
+                        if tExtnVal.url = $LISTGET(pMustSupport,i)
+                    }
+                }
+                set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resource.resourceType_".extension.url = "_$LISTGET(pMustSupport,i)_" is not defined"
+            }    
+ 
+            set tsc= ValError.%Save()
+               
+        }
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+ 
+Method GetValidationConfig(Output pValAttr, Output pValExtn) As %Status
+{
+    Try {
+        Set tStatement = ##class(%SQL.Statement).%New()
+        Set TargetQuery = "SELECT ResourceType,MustSupportAttribute, MustSupportExtension FROM FHIRSERVERPKG_FHIR.ValidatorConfig"
+        set tSC = tStatement.%Prepare(TargetQuery)
+        If tSC'=1 $$$ThrowStatus($$$ERROR($$$GeneralError,"Invalid Statement"))
+        Set tResult = tStatement.%Execute()
+        If '$IsObject(tResult) $$$ThrowStatus($$$ERROR($$$GeneralError,"Invalid Statement"))
+       
+        While (tResult.%Next()) {
+            set pValAttr(tResult.%Get("ResourceType")) = tResult.%Get("MustSupportAttribute")
+            set pValExtn(tResult.%Get("ResourceType")) = tResult.%Get("MustSupportExtension")
+           
+        }
+       
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+Storage Default
+{
+<Type>%Storage.Persistent</Type>
+}
+ 
+}
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Include (HS.FHIRServer, HS.FHIR.Errors)
+ 
+Class FHIRSERVERPKG.FHIR.Validator Extends Ens.BusinessProcess
+{
+ 
+/// Description
+Method OnRequest(pRequest As Ens.StreamContainer, pResponse As Ens.StreamContainer) As %Status
+{
     //Validate the patient resource
     set schema = ##class(HS.FHIRServer.Schema).LoadSchema("R4")
     set resourceValidator = ##class(HS.FHIRServer.Util.ResourceValidator).%New(schema)
