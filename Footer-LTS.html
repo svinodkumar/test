@@ -1,3 +1,48 @@
+Class FHIRSERVERPKG.FHIR.Util Extends %RegisteredObject
+{
+ 
+/// Description
+ClassMethod GetAttributes(pJsonVal, Output pVal) As %Status
+{
+    set tSC=$$$OK
+    Try {
+        set resourceiter = pJsonVal.%GetIterator()
+        while resourceiter.%GetNext(.tKey1,.tVal1,.tType1){
+            if tType1 ="object" {
+                set Val1Iter = tVal1.%GetIterator()
+                while Val1Iter.%GetNext(.tKey2,.tVal2,.tType2) {
+                    set pVal(pJsonVal.resourceType,tKey1,tKey2)=1
+                }
+            }
+            elseif tType1 = "array"{
+                set Val1Iter = tVal1.%GetIterator()
+                while Val1Iter.%GetNext(.tKey2,.tVal2,.tType2) {
+                    set Val2Iter = tVal2.%GetIterator()
+                    while Val2Iter.%GetNext(.tKey3,.tVal3,.tType3) {
+                        set pVal(pJsonVal.resourceType,tKey1,tKey2,tKey3)=1
+                    }
+ 
+                }
+            }
+            else {
+                set pVal(pJsonVal.resourceType,tKey1) = 1
+            }
+        }
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    quit tSC
+}
+ 
+}
+
+
+
+
+
+
+
 Include (HS.FHIRServer, HS.FHIR.Errors)
  
 Class FHIRSERVERPKG.FHIR.Validator Extends Ens.BusinessProcess
