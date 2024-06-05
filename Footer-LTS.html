@@ -1,3 +1,245 @@
+Include (HS.FHIRServer, HS.FHIR.Errors)
+ 
+Class FHIRSERVERPKG.FHIR.Validator Extends Ens.BusinessProcess
+{
+ 
+/// Description
+Method OnRequest(pRequest As Ens.StreamContainer, pResponse As Ens.StreamContainer) As %Status
+{
+    #dim Test as %String
+   
+    Set sc = $$$OK
+    $$$LOGINFO("Inside Validator")
+    //Validate the patient resource set R4 schema
+    set schema = ##class(HS.FHIRServer.Schema).LoadSchema("R4")
+    set resourceValidator = ##class(FHIRSERVERPKG.FHIR.ResourceValidator).%New(schema)
+    $$$LOGINFO("read Configuration")
+    //read the validation configurations
+    Set tValAttr = "" , tValExtn = ""
+    set tSC = ..GetValidationConfig(.tValAttr, .tValExtn)
+    $$$LOGINFO("done with configuration")
+    set CDRFHIRMSErr = "<CDRFHIRError>MustSupport"
+   
+    //read the source bundle
+    set tBundle = ##class(%DynamicObject).%FromJSON(pRequest.Stream)
+ 
+    set tEntryIterator = tBundle.entry.%GetIterator()
+    while tEntryIterator.%GetNext(.tKey,.tval,.tType){
+        $$$LOGINFO("into the bundle")
+        set MSAttribute = $LISTFROMSTRING($GET(tValAttr(tval.resource.resourceType)),"^")
+        set MSExtension = $LISTFROMSTRING($GET(tValExtn(tval.resource.resourceType)),"^")
+        if tval.resource.resourceType = "Patient" {
+            $$$LOGINFO("for Patient")
+            // Validate CDR Must Support and Must Have attributes
+            set tSC = ..ValidateMustSupport(tval,MSAttribute)
+            //set tSC = ..ValidateMustSupportExtn(tval,MSExtension)
+ 
+            //validate CDR must support complex data type; get the fhir data type and handle each type differently
+            set resourceiter = tval.resource.%GetIterator()
+            while resourceiter.%GetNext(.tKey1,.tVal1,.tType1){
+                if (tType1 ="object") || tType1 = "array" {
+                    $$$LOGINFO("Inside complex")
+                    set dt = resourceValidator.GetFHIRDT(tval.resource.resourceType,tKey1)
+                    set tSC = ..ValidateMustSupportComplex(tval.resource,MSAttribute,tKey1,dt)
+                    }
+                else {
+                    set pVal(tval.resource.resourceType,tKey1) = 1
+                }
+            }
+            // Use builtin FHIR validator and capture the errors using try block to a table
+            Try {
+                $$$ThrowOnError(resourceValidator.ValidateObject(tval.resource,tval.resource.resourceType,tval.resource.resourceType,$$$OK,1))
+            } Catch ex {
+                set tsc = ex.AsStatus()
+                do $SYSTEM.Status.DecomposeStatus(tsc,.errorlist)
+               
+                for i=1:1:errorlist {
+                    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+                    set ValError.ResourceType = tval.resource.resourceType
+                    set ValError.ResourceID = tval.resource.id
+                    set ValError.ErrorCode = errorlist(i,"code")
+                    set ValError.ErrorDescription = errorlist(i)
+                    set ValError.SessionId = ..%SessionId
+                    set tsc= ValError.%Save()
+                   
+                }
+                set sc=$$$OK
+            }
+           
+        }
+           
+    }
+    //@vinod - write a logic to read from the table based on the sessionid and put in a outputfile.
+    Return sc
+}
+ 
+Method ValidateMustSupport(pval, pMustSupport) As %Status
+{
+    Set tSC=$$$OK
+    Try {
+        set CDRFHIRMSErr = "<CDRFHIRError>MustSupport"
+        for i=1:1:$LISTLENGTH(pMustSupport) {
+                If pval.resource.%IsDefined($LISTGET(pMustSupport,i)) = 0 {
+                    set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+                    set ValError.ResourceType = pval.resource.resourceType
+                    set ValError.ResourceID = pval.resource.id
+                    //@vinod - capture ValError.InsertDate
+                    set ValError.ErrorCode = CDRFHIRMSErr
+                    set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resource.resourceType_"."_$LISTGET(pMustSupport,i)_" is not defined"
+                    set ValError.SessionId = ..%SessionId
+                    set tsc= ValError.%Save()
+                   
+                }
+            }
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+Method ValidateMustSupportComplex(pval, pMustSupport, pPropName, pPropType) As %Status
+{
+    Set tSC=$$$OK
+    Try {
+        if pPropType = "Identifier" {
+            set identifieriter = pval.identifier.%GetIterator()
+            $$$LOGINFO("inside identifier")
+            while identifieriter.%GetNext(.tK1,.tV1) {
+                if tV1.%IsDefined("use") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_".use")}
+                if tV1.%IsDefined("system") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_".system")}
+                if tV1.%IsDefined("value") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_".value")}
+                if tV1.%IsDefined("type") = 1 {
+                    if tV1.type.%IsDefined("text") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_"type.text")}
+                    if tV1.type.%IsDefined("coding") = 1 {
+                        if tV1.type.coding."0".%IsDefined("system") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_".type.coding.0.system")}
+                        if tV1.type.coding."0".%IsDefined("code") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_".type.coding.0.code")}
+                        if tV1.type.coding."0".%IsDefined("display") = 0 {set tSC = ..LogError(pval,"identifier."_tK1_".type.coding.0.display")}
+                    }
+                }
+               
+            }
+ 
+        }
+        elseif pPropType = "HumanName" {
+ 
+        }
+        elseif pPropType = "Address" {
+ 
+        }
+        elseif pPropType = "ContactPoint" {
+ 
+        }
+        elseif pPropType = "CodableConcept" {
+ 
+        }
+        elseif pPropType = "Reference" {
+ 
+        }
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+}
+ 
+/// Description
+Method LogError(pval, pPropPath) As %Status
+{
+    Set tSC=$$$OK
+    Try {
+        $$$LOGINFO("Inside Log Error")
+        set CDRFHIRMSErr = "<CDRFHIRError>MustSupport"
+        set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()
+        set ValError.ResourceType = pval.resourceType
+        set ValError.ResourceID = pval.id
+        //@vinod - capture ValError.InsertDate
+        set ValError.ErrorCode = CDRFHIRMSErr
+        set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resourceType_"."_pPropPath_" is not defined"
+        set ValError.SessionId = ..%SessionId
+        set tsc= ValError.%Save()
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+Method ValidateMustSupportExtn(pval, pMustSupport) As %Status
+{
+    Set tSC=$$$OK
+    Try {
+        set CDRFHIRMSErr = "<CDRFHIRError>MustSupportExtension"
+        set ValError = ##class(FHIRSERVERPKG.FHIR.ErrorResponse).%New()  
+        set ValError.ResourceType = pval.resource.resourceType
+        set ValError.ResourceID = pval.resource.id
+        //@vinod - capture ValError.InsertDate
+        set ValError.ErrorCode = CDRFHIRMSErr
+        set ValError.SessionId = ..%SessionId
+        If pval.resource.%IsDefined("extension") = 0 {
+            set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resource.resourceType_".extension "_" is not defined"
+        }
+        Else{
+            set tExtnIter = pval.resource.extension.%GetIterator()
+            while tExtnIter.%GetNext(.tExtnKey, .tExtnVal, .tExtnType) {
+                for i=1:1:$LISTLENGTH(pMustSupport) {
+                    if tExtnVal.%IsDefined("url") = 1 {
+                        if tExtnVal.url = $LISTGET(pMustSupport,i)
+                    }
+                }
+                set ValError.ErrorDescription = CDRFHIRMSErr_":"_pval.resource.resourceType_".extension.url = "_$LISTGET(pMustSupport,i)_" is not defined"
+            }
+        }    
+ 
+            set tsc= ValError.%Save()
+               
+       
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+Method GetValidationConfig(Output pValAttr, Output pValExtn) As %Status
+{
+    Try {
+        Set tStatement = ##class(%SQL.Statement).%New()
+        Set TargetQuery = "SELECT ResourceType,MustSupportAttribute, MustSupportExtension FROM FHIRSERVERPKG_FHIR.ValidatorConfig"
+        set tSC = tStatement.%Prepare(TargetQuery)
+        If tSC'=1 $$$ThrowStatus($$$ERROR($$$GeneralError,"Invalid Statement"))
+        Set tResult = tStatement.%Execute()
+        If '$IsObject(tResult) $$$ThrowStatus($$$ERROR($$$GeneralError,"Invalid Statement"))
+       
+        While (tResult.%Next()) {
+            set pValAttr(tResult.%Get("ResourceType")) = tResult.%Get("MustSupportAttribute")
+            set pValExtn(tResult.%Get("ResourceType")) = tResult.%Get("MustSupportExtension")
+           
+        }
+       
+    }
+    Catch ex {
+        Set tSC=ex.AsStatus()
+    }
+    Quit tSC
+}
+ 
+Storage Default
+{
+<Type>%Storage.Persistent</Type>
+}
+ 
+}
+ 
+
+
+
+
+
+
+
+
+
+
 1.what fields we need to record from bundle for each error (example : bundle ID, resourcetype, must have/support attribute name).
 
 2.do we need to store error log in file ? if yes where we need to store that file.
