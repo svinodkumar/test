@@ -1,3 +1,91 @@
+Class MyApp.Tests.HL7OutputTest Extends %UnitTest.TestCase
+{
+
+    /// Setup before each test
+    Method OnBeforeEachTest() As %Status
+    {
+        // Set up any dependencies (e.g., HL7 schemas, mock data)
+        Write "Setup for HL7 test", !
+        Quit $$$OK
+    }
+
+    /// Teardown after each test
+    Method OnAfterEachTest() As %Status
+    {
+        // Clean up test environment
+        Write "Teardown for HL7 test", !
+        Quit $$$OK
+    }
+
+    /// Example test to verify HL7 message output
+    Method TestHL7MessageOutput() As %Status
+    {
+        // Arrange
+        Set expectedHL7 = "MSH|^~\&|MyApp|MyFacility|DestApp|DestFacility|202412161200||ADT^A01|123456|P|2.3"
+        Set expectedHL7 = expectedHL7_$C(13,10)_"PID|1||12345^^^MyFacility||Doe^John||19800101|M"
+        Set expectedHL7 = expectedHL7_$C(13,10)_"PV1|1|I|ICU||||123^Test^Doctor||"
+
+        // Generate an HL7 message (replace this with your own generation logic)
+        Set hl7Message = ..GenerateHL7Message()
+
+        // Act
+        // Parse the HL7 message into a document structure for validation
+        Set parsedMessage = ##class(EnsLib.HL7.Message).ImportFromString(hl7Message)
+
+        // Assert
+        // Verify the HL7 message structure and values
+        Do $$$AssertEquals(parsedMessage.GetValueAt("MSH:9"), "ADT^A01", "Message type is incorrect")
+        Do $$$AssertEquals(parsedMessage.GetValueAt("PID:5.1"), "Doe", "Last name is incorrect")
+        Do $$$AssertEquals(parsedMessage.GetValueAt("PID:5.2"), "John", "First name is incorrect")
+        Do $$$AssertEquals(parsedMessage.GetValueAt("PV1:3"), "ICU", "Patient location is incorrect")
+
+        // Optionally compare the full HL7 string output
+        Do $$$AssertEquals(hl7Message, expectedHL7, "HL7 message does not match the expected output")
+
+        Quit $$$OK
+    }
+
+    /// A sample method to generate an HL7 message (replace this with your logic)
+    Method GenerateHL7Message() As %String
+    {
+        // Create an HL7 message object
+        Set msg = ##class(EnsLib.HL7.Message).%New()
+        Do msg.InitAndSetHeaderDefaults("2.3")
+
+        // Set MSH segment
+        Do msg.SetValueAt("MyApp", "MSH:3")
+        Do msg.SetValueAt("MyFacility", "MSH:4")
+        Do msg.SetValueAt("DestApp", "MSH:5")
+        Do msg.SetValueAt("DestFacility", "MSH:6")
+        Do msg.SetValueAt($ZDATETIME($HOROLOG, 3, 1), "MSH:7")
+        Do msg.SetValueAt("ADT^A01", "MSH:9")
+        Do msg.SetValueAt("123456", "MSH:10")
+
+        // Set PID segment
+        Do msg.InsertSegment("PID", 2)
+        Do msg.SetValueAt("12345^^^MyFacility", "PID:3")
+        Do msg.SetValueAt("Doe^John", "PID:5")
+        Do msg.SetValueAt("19800101", "PID:7")
+        Do msg.SetValueAt("M", "PID:8")
+
+        // Set PV1 segment
+        Do msg.InsertSegment("PV1", 3)
+        Do msg.SetValueAt("I", "PV1:2")
+        Do msg.SetValueAt("ICU", "PV1:3")
+        Do msg.SetValueAt("123^Test^Doctor", "PV1:7")
+
+        // Export the HL7 message as a string
+        Set hl7String = msg.ExportToString()
+        Quit hl7String
+    }
+}
+
+
+
+
+
+
+
 Include (HS.FHIRServer, HS.FHIR.Errors)
  
 Class FHIRSERVERPKG.FHIR.Validator Extends Ens.BusinessProcess
